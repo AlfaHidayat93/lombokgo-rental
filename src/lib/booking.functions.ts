@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { quote } from "./pricing";
+import initialCatalog from "@/data/initialCatalog.json";
 
 const orderSchema = z.object({
   itemType: z.enum(["vehicle", "tour"]),
@@ -109,6 +110,9 @@ export const createOrder = createServerFn({ method: "POST" })
         }
       } catch (e) {
         console.warn("[createOrder] read catalog disk error:", e);
+      }
+      if (!vehicleData) {
+        vehicleData = (initialCatalog.vehicles as any)?.find((v: any) => v.id === data.itemId);
       }
     }
 

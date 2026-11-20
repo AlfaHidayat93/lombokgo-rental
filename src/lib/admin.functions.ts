@@ -52,6 +52,8 @@ export type CatalogData = {
   geminiApiKey?: string;
 };
 
+import initialCatalog from "@/data/initialCatalog.json";
+
 async function readCatalogDisk(): Promise<CatalogData> {
   try {
     const fs = await import("node:fs");
@@ -64,19 +66,8 @@ async function readCatalogDisk(): Promise<CatalogData> {
     console.warn("[readCatalogDisk] error:", e);
   }
 
-  // Fallback defaults
-  return {
-    waNumber: "6287866950767",
-    deliveryAreas: [
-      { name: "Bandara Lombok (LOP)", fee: 100000 },
-      { name: "Pelabuhan Lembar / Bangsal", fee: 100000 },
-      { name: "Mataram", fee: 0 },
-      { name: "Senggigi", fee: 50000 },
-      { name: "Kuta Mandalika", fee: 100000 },
-    ],
-    vehicles: [],
-    tours: [],
-  };
+  // Fallback ke initialCatalog yang ter-bundle di produksi (Vercel)
+  return initialCatalog as unknown as CatalogData;
 }
 
 async function writeCatalogDisk(data: CatalogData) {

@@ -17,7 +17,7 @@ export function Layout({ children }: { children: ReactNode }) {
     <div className="min-h-screen flex flex-col">
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <Link to="/" className="font-display text-2xl font-semibold text-primary">AURA<span className="text-accent">LOMBOK</span></Link>
+          <Link to="/" className="font-display text-2xl font-semibold text-primary">Lombok<span className="text-accent">Go</span></Link>
           <nav className="hidden gap-6 md:flex">
             {nav.map((n) => (
               <Link key={n.to} to={n.to} className="text-sm font-medium text-muted-foreground hover:text-primary" activeProps={{ className: "text-primary" }}>{n.label}</Link>
@@ -36,7 +36,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <footer className="bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-6xl gap-6 px-4 py-10 md:grid-cols-3">
           <div>
-            <p className="font-display text-2xl">AURA LOMBOK</p>
+            <p className="font-display text-2xl font-semibold">Lombok<span className="text-accent">Go</span></p>
             <p className="mt-2 text-sm opacity-80">Sewa kendaraan & paket wisata Lombok — praktis, cepat, terpercaya.</p>
             <div className="mt-4">
               <Link to="/admin" className="text-xs opacity-60 hover:opacity-100 transition underline underline-offset-4">

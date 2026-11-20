@@ -3,7 +3,9 @@ import rinjani from "@/assets/rinjani.jpg";
 import kuta from "@/assets/kuta.jpg";
 import hero from "@/assets/hero.jpg";
 
-export const WA_NUMBER = "6281234567890";
+import initialCatalog from "@/data/initialCatalog.json";
+
+export const WA_NUMBER = initialCatalog.waNumber || "6287866950767";
 export const waLink = (text: string) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 
@@ -25,7 +27,7 @@ export type Vehicle = {
   image?: string;
 };
 
-export const vehicles: Vehicle[] = [
+export const vehicles: Vehicle[] = (initialCatalog.vehicles as any) || [
   { id: "avanza", name: "Toyota Avanza", type: "Mobil", seats: 7, transmission: "Manual", driver: true, daily: 350000, weekly: 2200000, year: 2022, condition: "Sangat baik, AC dingin", specs: ["AC", "Audio Bluetooth", "Bensin"] },
   { id: "innova", name: "Toyota Innova Reborn", type: "Mobil", seats: 7, transmission: "Otomatis", driver: true, daily: 650000, weekly: 4200000, year: 2023, condition: "Seperti baru", specs: ["AC Double Blower", "Captain Seat", "Diesel"] },
   { id: "brio", name: "Honda Brio", type: "Mobil", seats: 4, transmission: "Otomatis", driver: false, daily: 300000, weekly: 1900000, year: 2023, condition: "Sangat baik", specs: ["AC", "Irit BBM", "Kamera Mundur"] },
@@ -35,7 +37,7 @@ export const vehicles: Vehicle[] = [
   { id: "klx", name: "Kawasaki KLX 150", type: "Motor", seats: 2, transmission: "Manual", driver: false, daily: 175000, weekly: 1050000, year: 2022, condition: "Siap off-road", specs: ["150cc", "Trail", "Helm Cross"] },
 ];
 
-export const deliveryAreas = [
+export const deliveryAreas = initialCatalog.deliveryAreas || [
   { name: "Bandara Lombok (LOP)", fee: 100000 },
   { name: "Pelabuhan Lembar / Bangsal", fee: 100000 },
   { name: "Mataram", fee: 0 },
