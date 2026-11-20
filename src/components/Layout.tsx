@@ -3,7 +3,7 @@ import { MessageCircle, Menu, X, MapPin, Clock, Mail, Phone, ShieldCheck, Instag
 import { ChatWidget } from "./ChatWidget";
 import { useState, type ReactNode } from "react";
 import { waLink, WA_NUMBER } from "@/lib/data";
-import logoImg from "@/assets/logo.jpg";
+import logoImg from "@/assets/logo.png";
 
 const nav = [
   { to: "/kendaraan", label: "Sewa Kendaraan" },
@@ -98,7 +98,7 @@ export function Layout({ children }: { children: ReactNode }) {
               <img
                 src={logoImg}
                 alt="LombokGo Logo"
-                className="h-12 w-auto bg-white/95 rounded-lg p-1"
+                className="h-12 w-auto object-contain drop-shadow-sm"
               />
               <div>
                 <p className="font-display text-xl font-bold">LombokGo</p>

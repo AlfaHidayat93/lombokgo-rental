@@ -20,7 +20,7 @@ import { Layout } from "@/components/Layout";
 import { getInvoice, payOrder, getPaymentToken } from "@/lib/booking.functions";
 import { rupiah, waLink, WA_NUMBER } from "@/lib/data";
 import { toast } from "sonner";
-import logoImg from "@/assets/logo.jpg";
+import logoImg from "@/assets/logo.png";
 
 export const Route = createFileRoute("/invoice/$invoice")({
   validateSearch: z.object({ token: z.string().default("") }),
@@ -252,7 +252,7 @@ function Page() {
                   <img
                     src={logoImg}
                     alt="LombokGo Transport & Rental"
-                    className="h-12 w-auto object-contain rounded-md border p-0.5 bg-white"
+                    className="h-12 w-auto object-contain"
                   />
                   <div>
                     <span className="font-display text-2xl font-bold tracking-tight text-primary">
