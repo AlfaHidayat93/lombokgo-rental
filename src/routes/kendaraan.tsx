@@ -97,8 +97,21 @@ function Page() {
   return (
     <Layout>
       <section className="mx-auto max-w-6xl px-4 py-12">
-        <h1 className="text-5xl font-semibold">Sewa Kendaraan</h1>
-        <p className="mt-2 text-muted-foreground">Diantar gratis area Mataram. Bandara, pelabuhan, Senggigi & Kuta tersedia.</p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold text-accent mb-2">
+              <span>📍 Berbasis di Bandara Internasional Lombok (BIZAM)</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-display font-bold">Sewa Kendaraan Lombok</h1>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Serah terima cepat di gerbang BIZAM atau diantar ke Mataram, Senggigi & Kuta Mandalika.
+            </p>
+          </div>
+          <div className="rounded-xl border bg-card p-3 text-xs text-muted-foreground max-w-sm">
+            <span className="font-semibold text-foreground">✨ Fasilitas Motor Gratis:</span> 2 Helm SNI bersih, jas hujan & phone holder di setiap sewa motor.
+          </div>
+        </div>
+
         <div className="mt-8 flex flex-wrap gap-3 rounded-2xl bg-secondary p-4">
           <select className={sel} value={type} onChange={(e) => setType(e.target.value)}><option>Semua</option><option>Mobil</option><option>Motor</option></select>
           <select className={sel} value={seats} onChange={(e) => setSeats(+e.target.value)}><option value={0}>Semua kapasitas</option><option value={4}>4+ orang</option><option value={7}>7+ orang</option><option value={14}>14 orang</option></select>

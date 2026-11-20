@@ -20,6 +20,7 @@ import { Layout } from "@/components/Layout";
 import { getInvoice, payOrder, getPaymentToken } from "@/lib/booking.functions";
 import { rupiah, waLink, WA_NUMBER } from "@/lib/data";
 import { toast } from "sonner";
+import logoImg from "@/assets/logo.jpg";
 
 export const Route = createFileRoute("/invoice/$invoice")({
   validateSearch: z.object({ token: z.string().default("") }),
@@ -247,17 +248,24 @@ function Page() {
             {/* Top Header */}
             <div className="flex flex-col justify-between gap-6 border-b pb-8 sm:flex-row sm:items-start">
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-display text-3xl font-bold tracking-tight text-primary">
-                    Lombok<span className="text-accent">Go</span>
-                  </span>
-                  <span className="rounded-md bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
-                    Official
-                  </span>
+                <div className="flex items-center gap-3">
+                  <img
+                    src={logoImg}
+                    alt="LombokGo Transport & Rental"
+                    className="h-12 w-auto object-contain rounded-md border p-0.5 bg-white"
+                  />
+                  <div>
+                    <span className="font-display text-2xl font-bold tracking-tight text-primary">
+                      Lombok<span className="text-accent">Go</span>
+                    </span>
+                    <span className="ml-2 rounded-md bg-accent/15 px-2 py-0.5 text-[11px] font-semibold text-accent">
+                      Resmi BIZAM
+                    </span>
+                    <p className="text-[11px] font-medium text-foreground">LombokGo Transport and Rental</p>
+                  </div>
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">PT Lombok Roam & Rent Indonesia</p>
-                <p className="text-xs text-muted-foreground">Jl. Pejanggik No. 88, Mataram, Nusa Tenggara Barat</p>
-                <p className="text-xs text-muted-foreground">WhatsApp: +{WA_NUMBER} · info@lombokgo.com</p>
+                <p className="mt-2 text-xs text-muted-foreground">Kawasan Bandara Internasional Lombok (BIZAM), Jl. Bypass BIL – Mandalika, Praya, Lombok Tengah</p>
+                <p className="text-xs text-muted-foreground">WhatsApp: +{WA_NUMBER} · Email: info@lombokgotransport.com</p>
               </div>
 
               <div className="flex flex-col sm:items-end">
